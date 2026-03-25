@@ -1,13 +1,273 @@
-<!doctype html>
-<html lang="fa">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Naser Dehghan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-Hello World!
+<body class="bg-[#0a0a0a] text-gray-300 min-h-screen font-sans">
+    <div id="app" x-data="resumeApp()" x-init="initApp()" class="container mx-auto p-4 md:p-8 max-w-6xl">
+        <template x-if="loading">
+            <div class="flex justify-center items-center h-64">
+                <i class="fas fa-spinner fa-spin text-4xl text-orange-500"></i>
+            </div>
+        </template>
+        <template x-if="!loading && resume">
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[300px_1fr] gap-8">
+                <!-- Left Sidebar -->
+                <aside class="space-y-8">
+
+                    <!-- Profile Header Section -->
+                    <div class="space-y-6">
+                        <template x-if="!resume.picture.hidden">
+                            <div class="relative w-48 h-48 mx-auto md:mx-0">
+                                <img :src="resume.picture.url" alt="Profile Picture" class="w-full h-full object-cover grayscale rounded-3xl z-10 relative shadow-lg">
+                                <!-- Orange Star decorative element -->
+                                <div class="absolute -top-3 -right-3 text-orange-500 z-20">
+                                    <i class="fas fa-star text-3xl"></i>
+                                </div>
+                            </div>
+                        </template>
+
+                        <div>
+                            <h1 class="text-4xl font-bold text-white mb-2" x-text="resume.basics.name"></h1>
+                            <p class="text-xl text-orange-500 font-medium mb-4" x-text="resume.basics.headline"></p>
+
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope w-4 text-center"></i>
+                                    <a :href="'mailto:' + resume.basics.email" class="hover:text-white transition-colors" x-text="resume.basics.email"></a>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-location-dot w-4 text-center"></i>
+                                    <span x-text="resume.basics.location"></span>
+                                </div>
+
+                                <template x-if="!resume.sections.profiles.hidden">
+                                    <template x-for="profile in resume.sections.profiles.items" :key="profile.id">
+                                        <template x-if="!profile.hidden">
+                                            <div class="flex items-center gap-3">
+                                                <i :class="'fab fa-' + profile.network.toLowerCase() + ' w-4 text-center'"></i>
+                                                <a :href="profile.website.url" target="_blank" class="hover:text-white transition-colors" x-text="profile.network"></a>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Download Resume Button -->
+                        <button class="w-full py-3 px-4 bg-[#1a1a1a] border border-[#333] hover:border-orange-500 hover:text-orange-500 rounded-xl transition-all flex justify-center items-center gap-2 font-medium">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </button>
+                    </div>
+
+                    <!-- Summary Section -->
+                    <template x-if="!resume.summary.hidden">
+                        <div class="space-y-4">
+                            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                                <span x-text="resume.summary.title"></span>
+                            </h2>
+                            <div class="text-sm text-gray-400 leading-relaxed text-justify" x-html="resume.summary.content"></div>
+                        </div>
+                    </template>
+
+                </aside>
+
+                <!-- Right Main Content -->
+                <main class="space-y-12">
+
+                    <!-- Experience Section -->
+                    <template x-if="!resume.sections.experience.hidden">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                                <i class="fas fa-briefcase text-orange-500"></i>
+                                <span x-text="resume.sections.experience.title"></span>
+                            </h2>
+                            <div class="relative border-l border-gray-800 ml-3 space-y-10 pb-4">
+                                <template x-for="item in resume.sections.experience.items" :key="item.id">
+                                    <template x-if="!item.hidden">
+                                        <div class="relative pl-8">
+                                            <!-- Timeline Dot -->
+                                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-orange-500"></span>
+
+                                            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                                                <h3 class="text-xl font-bold text-white" x-text="item.position"></h3>
+                                                <div class="text-orange-500 text-sm font-medium whitespace-nowrap" x-text="item.period"></div>
+                                            </div>
+                                            <div class="text-gray-400 font-medium mb-4 flex items-center gap-2">
+                                                <span x-text="item.company"></span>
+                                                <template x-if="item.location">
+                                                    <span class="text-gray-600 text-sm border-l border-gray-600 pl-2 ml-1" x-text="item.location"></span>
+                                                </template>
+                                            </div>
+
+                                            <div class="text-gray-400 text-sm leading-relaxed space-y-2 [&>p]:mb-2" x-html="item.description"></div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </section>
+                    </template>
+
+                    <!-- Skills / Stack Section -->
+                    <template x-if="!resume.sections.skills.hidden">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                                <i class="fas fa-layer-group text-orange-500"></i>
+                                <span x-text="resume.sections.skills.title"></span>
+                            </h2>
+                            <div class="flex flex-wrap gap-4">
+                                <template x-for="skill in resume.sections.skills.items" :key="skill.id">
+                                    <template x-if="!skill.hidden">
+                                        <div class="flex flex-col items-center justify-center bg-[#111] border border-gray-800 rounded-2xl p-4 w-[110px] h-[110px] hover:border-orange-500 hover:shadow-[0_0_15px_rgba(234,88,12,0.2)] transition-all group">
+                                            <i :class="getSkillIcon(skill.name) + ' text-4xl mb-3 text-gray-500 group-hover:text-white transition-colors'"></i>
+                                            <span class="text-xs text-gray-400 text-center font-medium group-hover:text-gray-200" x-text="skill.name"></span>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </section>
+                    </template>
+
+                    <!-- Grid Container for Other Sections -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <!-- Projects -->
+                        <template x-if="resume.sections.projects && !resume.sections.projects.hidden && resume.sections.projects.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-project-diagram text-orange-500"></i>
+                                    <span x-text="resume.sections.projects.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.projects.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold" x-text="item.name"></h3>
+                                                <div class="text-orange-500 text-xs mb-3 font-medium" x-text="item.period"></div>
+                                                <div class="text-gray-400 text-sm space-y-1" x-html="item.description"></div>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="text-sm text-gray-300 hover:text-orange-500 transition-colors mt-4 inline-flex items-center gap-1 font-medium">
+                                                        <i class="fas fa-link text-xs"></i> View Project
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- Certifications -->
+                        <template x-if="resume.sections.certifications && !resume.sections.certifications.hidden && resume.sections.certifications.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-certificate text-orange-500"></i>
+                                    <span x-text="resume.sections.certifications.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.certifications.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold text-sm mb-2" x-text="item.title"></h3>
+                                                <div class="flex justify-between items-center mb-3">
+                                                    <span class="text-gray-400 text-xs" x-text="item.issuer"></span>
+                                                    <span class="text-orange-500 text-xs font-medium" x-text="item.date"></span>
+                                                </div>
+                                                <div class="text-gray-400 text-sm space-y-1" x-html="item.description"></div>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="text-sm text-gray-300 hover:text-orange-500 transition-colors mt-2 inline-flex items-center gap-1 font-medium">
+                                                        <i class="fas fa-external-link-alt text-xs"></i> View Credential
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- Languages -->
+                        <template x-if="resume.sections.languages && !resume.sections.languages.hidden && resume.sections.languages.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-globe text-orange-500"></i>
+                                    <span x-text="resume.sections.languages.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.languages.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 flex justify-between items-center hover:border-gray-600 transition-colors">
+                                                <span class="text-white font-bold" x-text="item.language"></span>
+                                                <div class="flex gap-1.5">
+                                                    <template x-for="i in 5">
+                                                        <div class="w-2.5 h-2.5 rounded-full" :class="i <= item.level ? 'bg-orange-500' : 'bg-gray-800'"></div>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+                    </div>
+
+                </main>
+            </div>
+        </template>
+        <template x-if="error">
+            <div class="text-red-500 text-center" x-text="error"></div>
+        </template>
+    </div>
+
+    <script>
+        function resumeApp() {
+            return {
+                loading: true,
+                resume: null,
+                error: null,
+
+                getSkillIcon(name) {
+                    const iconMap = {
+                        'Javascript/Typescript': 'fab fa-js',
+                        'NodeJS': 'fab fa-node-js',
+                        'Rust': 'fab fa-rust',
+                        'ReactJS': 'fab fa-react',
+                        'Angular': 'fab fa-angular',
+                        'MongoDB': 'fas fa-database',
+                        'Postgres': 'fas fa-database',
+                        'Redis': 'fas fa-server',
+                        'LLM and Agents': 'fas fa-robot',
+                        'Flutter': 'fas fa-mobile-screen',
+                        'DevOps': 'fab fa-docker',
+                        'Software Principles': 'fas fa-code',
+                        'Software Architectures': 'fas fa-sitemap'
+                    };
+                    return iconMap[name] || 'fas fa-star';
+                },
+
+                async initApp() {
+                    try {
+                        const response = await fetch('resume.json');
+                        if (!response.ok) throw new Error('Failed to load resume data');
+                        this.resume = await response.json();
+                    } catch (err) {
+                        this.error = err.message;
+                    } finally {
+                        this.loading = false;
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
