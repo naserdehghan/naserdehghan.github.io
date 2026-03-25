@@ -40,10 +40,36 @@
                                     <i class="fas fa-envelope w-4 text-center"></i>
                                     <a :href="'mailto:' + resume.basics.email" class="hover:text-white transition-colors" x-text="resume.basics.email"></a>
                                 </div>
+                                <template x-if="resume.basics.phone">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-phone w-4 text-center"></i>
+                                        <a :href="'tel:' + resume.basics.phone" class="hover:text-white transition-colors" x-text="resume.basics.phone"></a>
+                                    </div>
+                                </template>
                                 <div class="flex items-center gap-3">
                                     <i class="fas fa-location-dot w-4 text-center"></i>
                                     <span x-text="resume.basics.location"></span>
                                 </div>
+                                <template x-if="resume.basics.website && resume.basics.website.url">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-globe w-4 text-center"></i>
+                                        <a :href="resume.basics.website.url" target="_blank" class="hover:text-white transition-colors" x-text="resume.basics.website.label || resume.basics.website.url"></a>
+                                    </div>
+                                </template>
+
+                                <template x-if="resume.basics.customFields && resume.basics.customFields.length > 0">
+                                    <template x-for="field in resume.basics.customFields" :key="field.id">
+                                        <div class="flex items-center gap-3">
+                                            <i :class="field.icon ? 'w-4 text-center ' + field.icon : 'fas fa-info-circle w-4 text-center'"></i>
+                                            <template x-if="field.link">
+                                                <a :href="field.link" target="_blank" class="hover:text-white transition-colors" x-text="field.text"></a>
+                                            </template>
+                                            <template x-if="!field.link">
+                                                <span x-text="field.text"></span>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </template>
 
                                 <template x-if="!resume.sections.profiles.hidden">
                                     <template x-for="profile in resume.sections.profiles.items" :key="profile.id">
@@ -100,9 +126,106 @@
                                                 <div class="text-orange-500 text-sm font-medium whitespace-nowrap" x-text="item.period"></div>
                                             </div>
                                             <div class="text-gray-400 font-medium mb-4 flex items-center gap-2">
-                                                <span x-text="item.company"></span>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="hover:text-orange-500 transition-colors" x-text="item.company"></a>
+                                                </template>
+                                                <template x-if="!item.website || !item.website.url">
+                                                    <span x-text="item.company"></span>
+                                                </template>
                                                 <template x-if="item.location">
                                                     <span class="text-gray-600 text-sm border-l border-gray-600 pl-2 ml-1" x-text="item.location"></span>
+                                                </template>
+                                            </div>
+
+                                            <div class="text-gray-400 text-sm leading-relaxed space-y-2 [&>p]:mb-2" x-html="item.description"></div>
+
+                                            <!-- Roles -->
+                                            <template x-if="item.roles && item.roles.length > 0">
+                                                <div class="mt-4 space-y-4 border-l border-gray-800 ml-2 pl-4">
+                                                    <template x-for="role in item.roles" :key="role.id">
+                                                        <div class="relative">
+                                                            <span class="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-gray-800"></span>
+                                                            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                                                                <h4 class="text-md font-bold text-gray-200" x-text="role.position"></h4>
+                                                                <div class="text-orange-500/80 text-xs font-medium whitespace-nowrap" x-text="role.period"></div>
+                                                            </div>
+                                                            <div class="text-gray-400 text-sm leading-relaxed space-y-2 [&>p]:mb-2" x-html="role.description"></div>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </section>
+                    </template>
+
+                    <!-- Education Section -->
+                    <template x-if="resume.sections.education && !resume.sections.education.hidden && resume.sections.education.items.filter(i => !i.hidden).length > 0">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                                <i class="fas fa-graduation-cap text-orange-500"></i>
+                                <span x-text="resume.sections.education.title"></span>
+                            </h2>
+                            <div class="relative border-l border-gray-800 ml-3 space-y-10 pb-4">
+                                <template x-for="item in resume.sections.education.items" :key="item.id">
+                                    <template x-if="!item.hidden">
+                                        <div class="relative pl-8">
+                                            <!-- Timeline Dot -->
+                                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-orange-500"></span>
+
+                                            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                                                <h3 class="text-xl font-bold text-white" x-text="item.degree + (item.area ? ' in ' + item.area : '')"></h3>
+                                                <div class="text-orange-500 text-sm font-medium whitespace-nowrap" x-text="item.period"></div>
+                                            </div>
+                                            <div class="text-gray-400 font-medium mb-4 flex items-center gap-2">
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="hover:text-orange-500 transition-colors" x-text="item.school"></a>
+                                                </template>
+                                                <template x-if="!item.website || !item.website.url">
+                                                    <span x-text="item.school"></span>
+                                                </template>
+                                                <template x-if="item.grade">
+                                                    <span class="text-gray-600 text-sm border-l border-gray-600 pl-2 ml-1" x-text="'Grade: ' + item.grade"></span>
+                                                </template>
+                                                <template x-if="item.location">
+                                                    <span class="text-gray-600 text-sm border-l border-gray-600 pl-2 ml-1" x-text="item.location"></span>
+                                                </template>
+                                            </div>
+
+                                            <div class="text-gray-400 text-sm leading-relaxed space-y-2 [&>p]:mb-2" x-html="item.description"></div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </section>
+                    </template>
+
+                    <!-- Volunteer Section -->
+                    <template x-if="resume.sections.volunteer && !resume.sections.volunteer.hidden && resume.sections.volunteer.items.filter(i => !i.hidden).length > 0">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                                <i class="fas fa-hand-holding-heart text-orange-500"></i>
+                                <span x-text="resume.sections.volunteer.title"></span>
+                            </h2>
+                            <div class="relative border-l border-gray-800 ml-3 space-y-10 pb-4">
+                                <template x-for="item in resume.sections.volunteer.items" :key="item.id">
+                                    <template x-if="!item.hidden">
+                                        <div class="relative pl-8">
+                                            <!-- Timeline Dot -->
+                                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-orange-500"></span>
+
+                                            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                                                <h3 class="text-xl font-bold text-white" x-text="item.organization"></h3>
+                                                <div class="text-orange-500 text-sm font-medium whitespace-nowrap" x-text="item.period"></div>
+                                            </div>
+                                            <div class="text-gray-400 font-medium mb-4 flex items-center gap-2">
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="hover:text-orange-500 transition-colors" x-text="item.location"></a>
+                                                </template>
+                                                <template x-if="!item.website || !item.website.url">
+                                                    <span x-text="item.location"></span>
                                                 </template>
                                             </div>
 
@@ -121,12 +244,30 @@
                                 <i class="fas fa-layer-group text-orange-500"></i>
                                 <span x-text="resume.sections.skills.title"></span>
                             </h2>
-                            <div class="flex flex-wrap gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 <template x-for="skill in resume.sections.skills.items" :key="skill.id">
                                     <template x-if="!skill.hidden">
-                                        <div class="flex flex-col items-center justify-center bg-[#111] border border-gray-800 rounded-2xl p-4 w-[110px] h-[110px] hover:border-orange-500 hover:shadow-[0_0_15px_rgba(234,88,12,0.2)] transition-all group">
-                                            <i :class="getSkillIcon(skill.name) + ' text-4xl mb-3 text-gray-500 group-hover:text-white transition-colors'"></i>
-                                            <span class="text-xs text-gray-400 text-center font-medium group-hover:text-gray-200" x-text="skill.name"></span>
+                                        <div class="flex flex-col bg-[#111] border border-gray-800 rounded-2xl p-5 hover:border-orange-500 hover:shadow-[0_0_15px_rgba(234,88,12,0.2)] transition-all group">
+                                            <div class="flex items-center gap-3 mb-3">
+                                                <i :class="getSkillIcon(skill.name) + ' text-2xl text-gray-500 group-hover:text-white transition-colors'"></i>
+                                                <div class="flex-1">
+                                                    <h3 class="text-sm text-gray-200 font-bold group-hover:text-white" x-text="skill.name"></h3>
+                                                    <template x-if="skill.level > 0">
+                                                        <div class="flex gap-1 mt-1">
+                                                            <template x-for="i in 5">
+                                                                <div class="w-1.5 h-1.5 rounded-full" :class="i <= skill.level ? 'bg-orange-500' : 'bg-gray-800'"></div>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                            <template x-if="skill.keywords && skill.keywords.length > 0">
+                                                <div class="flex flex-wrap gap-1.5 mt-auto">
+                                                    <template x-for="keyword in skill.keywords">
+                                                        <span class="text-[10px] bg-gray-800/50 text-gray-400 px-2 py-0.5 rounded-md border border-gray-800 whitespace-nowrap" x-text="keyword"></span>
+                                                    </template>
+                                                </div>
+                                            </template>
                                         </div>
                                     </template>
                                 </template>
@@ -215,6 +356,122 @@
                                 </div>
                             </section>
                         </template>
+
+                        <!-- Interests -->
+                        <template x-if="resume.sections.interests && !resume.sections.interests.hidden && resume.sections.interests.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-heart text-orange-500"></i>
+                                    <span x-text="resume.sections.interests.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.interests.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold mb-2" x-text="item.name"></h3>
+                                                <template x-if="item.keywords && item.keywords.length > 0">
+                                                    <div class="flex flex-wrap gap-1.5">
+                                                        <template x-for="keyword in item.keywords">
+                                                            <span class="text-[10px] bg-gray-800/50 text-gray-400 px-2 py-0.5 rounded-md border border-gray-800 whitespace-nowrap" x-text="keyword"></span>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- Awards -->
+                        <template x-if="resume.sections.awards && !resume.sections.awards.hidden && resume.sections.awards.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-trophy text-orange-500"></i>
+                                    <span x-text="resume.sections.awards.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.awards.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold text-sm mb-2" x-text="item.title"></h3>
+                                                <div class="flex justify-between items-center mb-3">
+                                                    <span class="text-gray-400 text-xs" x-text="item.awarder"></span>
+                                                    <span class="text-orange-500 text-xs font-medium" x-text="item.date"></span>
+                                                </div>
+                                                <div class="text-gray-400 text-sm space-y-1" x-html="item.description"></div>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="text-sm text-gray-300 hover:text-orange-500 transition-colors mt-2 inline-flex items-center gap-1 font-medium">
+                                                        <i class="fas fa-external-link-alt text-xs"></i> View Award
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- Publications -->
+                        <template x-if="resume.sections.publications && !resume.sections.publications.hidden && resume.sections.publications.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-book text-orange-500"></i>
+                                    <span x-text="resume.sections.publications.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.publications.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold text-sm mb-2" x-text="item.title"></h3>
+                                                <div class="flex justify-between items-center mb-3">
+                                                    <span class="text-gray-400 text-xs" x-text="item.publisher"></span>
+                                                    <span class="text-orange-500 text-xs font-medium" x-text="item.date"></span>
+                                                </div>
+                                                <div class="text-gray-400 text-sm space-y-1" x-html="item.description"></div>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="text-sm text-gray-300 hover:text-orange-500 transition-colors mt-2 inline-flex items-center gap-1 font-medium">
+                                                        <i class="fas fa-external-link-alt text-xs"></i> View Publication
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- References -->
+                        <template x-if="resume.sections.references && !resume.sections.references.hidden && resume.sections.references.items.filter(i => !i.hidden).length > 0">
+                            <section>
+                                <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+                                    <i class="fas fa-users text-orange-500"></i>
+                                    <span x-text="resume.sections.references.title"></span>
+                                </h2>
+                                <div class="space-y-4">
+                                    <template x-for="item in resume.sections.references.items" :key="item.id">
+                                        <template x-if="!item.hidden">
+                                            <div class="bg-[#111] border border-gray-800 rounded-xl p-5 hover:border-gray-600 transition-colors">
+                                                <h3 class="text-white font-bold text-sm mb-1" x-text="item.name"></h3>
+                                                <div class="text-gray-400 text-xs mb-3" x-text="item.position"></div>
+                                                <template x-if="item.phone">
+                                                    <div class="text-gray-400 text-xs mb-1 flex items-center gap-1">
+                                                        <i class="fas fa-phone w-3"></i> <a :href="'tel:' + item.phone" class="hover:text-white" x-text="item.phone"></a>
+                                                    </div>
+                                                </template>
+                                                <div class="text-gray-400 text-sm space-y-1 italic border-l-2 border-orange-500 pl-3 mt-3" x-html="item.description"></div>
+                                                <template x-if="item.website && item.website.url">
+                                                    <a :href="item.website.url" target="_blank" class="text-sm text-gray-300 hover:text-orange-500 transition-colors mt-3 inline-flex items-center gap-1 font-medium">
+                                                        <i class="fas fa-external-link-alt text-xs"></i> View Profile
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
                     </div>
 
                 </main>
