@@ -1,0 +1,611 @@
+{
+  "picture": {
+    "hidden": false,
+    "url": "https://storage.rxresu.me/clq8f44zj00ckqzb5tvmij4kv/pictures/qq8t60ibi57ycwwfu4scve2e.jpg",
+    "size": 96,
+    "rotation": 0,
+    "aspectRatio": 0.75,
+    "borderRadius": 24,
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Naser Dehghan",
+    "headline": "Senior Software Engineer",
+    "email": "naserdehghan@outlook.com",
+    "phone": "",
+    "location": "Iran - Isfahan",
+    "website": {
+      "url": "",
+      "label": ""
+    },
+    "customFields": []
+  },
+  "summary": {
+    "title": "Summary",
+    "columns": 1,
+    "hidden": false,
+    "content": "<p style=\"text-align: start\">Results-oriented and passionate Full-stack Software Developer with extensive experience spanning from 2014 to the present. Proficient in a wide range of technologies, including Rust, Go, Node.js, Express, Nest.js,React and NextJS,Angular, MongoDB, Postgres, SQL, Flutter, Linux and DevOps. Committed to staying up-to-date with the latest industry trends and technologies. Skilled in design patterns, software architecture, SOLID principles, refactoring patterns, and the implementation of clean code. Seeking challenging opportunities to contribute technical expertise and creativity to innovative projects.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "Profiles",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "y8mpec62jbducvioh4vj0ll5",
+          "hidden": false,
+          "icon": "linkedin",
+          "network": "Linkedin",
+          "username": "naserdehghan",
+          "website": {
+            "url": "https://www.linkedin.com/in/naserdehghan/",
+            "label": ""
+          }
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019d2445-46f5-73ed-89e1-9723d28823ba",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "Nexus Workplace",
+          "position": "Software Engineer",
+          "location": "Iran - Isfahan",
+          "period": "Dec 2025 - Present",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "",
+          "roles": []
+        },
+        {
+          "id": "q3ijrnxyzunkzuiyiwi8ec08",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "Sishemi",
+          "position": "Senior Backend Developer",
+          "location": "Iran - Tehran (Remote)",
+          "period": "Feb 2024 - Dec 2025",
+          "website": {
+            "url": "https://sishemi.com",
+            "label": ""
+          },
+          "description": "<p>Technologies: NodeJS, NestJS, PostgreSQL, Prisma, Redis, CQRS, DDD</p><p></p><p>• 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗲𝗱 𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻𝘀 𝘁𝗼 𝗼𝗽𝘁𝗶𝗺𝗶𝘇𝗲 𝗵𝗲𝗮𝘃𝘆 𝘄𝗼𝗿𝗸𝗹𝗼𝗮𝗱 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗲𝘀 and enhance system responsiveness using 𝗕𝘂𝗹𝗹𝗠𝗤 for robust task queuing and management.</p><p>• 𝗟𝗲𝗱 𝘁𝗵𝗲 𝗲𝘃𝗮𝗹𝘂𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝘀𝗲𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗼𝗳 𝘁𝗵𝗲 𝗽𝗿𝗶𝗺𝗮𝗿𝘆 𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝘀𝘁𝗮𝗰𝗸, choosing 𝗯𝗲𝘁𝘁𝗲𝗿-𝗮𝘂𝘁𝗵 for its developer-friendly frontend library, simplified setup, and essential multi-tenant capabilities.</p><p>• 𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁𝗲𝗱 𝗮 𝗳𝗹𝗲𝘅𝗶𝗯𝗹𝗲, 𝗱𝘆𝗻𝗮𝗺𝗶𝗰 𝗔𝘁𝘁𝗿𝗶𝗯𝘂𝘁𝗲-𝗕𝗮𝘀𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀 𝗖𝗼𝗻𝘁𝗿𝗼𝗹 (ABAC) system using the 𝗖𝗔𝗦𝗟 library, empowering Workspace Owners to autonomously create and manage granular permission levels for their members.</p><p>• Deployed public-facing services onto 𝗖𝗹𝗼𝘂𝗱𝗳𝗹𝗮𝗿𝗲 𝗪𝗼𝗿𝗸𝗲𝗿𝘀 to significantly optimize resource usage and improve content delivery network (CDN) efficiency.</p><p>• Established the core data infrastructure, selecting 𝗣𝗼𝘀𝘁𝗴𝗿𝗲𝗦𝗤𝗟 as the primary relational database and 𝗣𝗿𝗶𝘀𝗺𝗮 as the ORM, then architecting and optimizing the initial database schema for performance and scalability.</p>",
+          "roles": []
+        },
+        {
+          "id": "l9lfv6h6h1iutrh4ezn7o40a",
+          "hidden": false,
+          "company": "Aspedan",
+          "position": "Technical Team Lead",
+          "location": "Canada (Remote)",
+          "period": "Oct 2023 - Feb 2024",
+          "website": {
+            "url": "https://about.aspedan.dev",
+            "label": ""
+          },
+          "description": "<p>Technologies: Linux, MongoDB, Rust (Programming Language), PostgreSQL, Redis, Prisma ORM, NestJS, React.js, Polaris, BullMQ (Producer/Consumer Queue) , Shopify Apps , Shopify Themes, Shopify Functions (Rust), Shopify Api/GraphQL</p><p></p><p>• 𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝗲𝗱 𝗮 𝘀𝗰𝗮𝗹𝗮𝗯𝗹𝗲, 𝗰𝗹𝗲𝗮𝗻-𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲 𝗡𝗲𝘀𝘁𝗝𝗦 𝗯𝗮𝗰𝗸𝗲𝗻𝗱 specifically optimized for seamless integration with the 𝗦𝗵𝗼𝗽𝗶𝗳𝘆 𝗔𝗣𝗜.</p><p>• 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗲𝗱 𝗮 𝗿𝗼𝗯𝘂𝘀𝘁 𝗿𝗮𝘁𝗲-𝗹𝗶𝗺𝗶𝘁 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝘀𝘆𝘀𝘁𝗲𝗺 using 𝗕𝘂𝗹𝗹𝗠𝗤 to process asynchronous Shopify API calls (REST and GraphQL) efficiently, ensuring consistent service uptime and performance.</p><p>• 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗵𝗶𝗴𝗵-𝗽𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗰𝘂𝘀𝘁𝗼𝗺 𝗱𝗶𝘀𝗰𝗼𝘂𝗻𝘁 𝗹𝗼𝗴𝗶𝗰 using 𝗥𝘂𝘀𝘁 and 𝗦𝗵𝗼𝗽𝗶𝗳𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀, calculating complex pricing formulas based on real-time product and customer attributes.</p><p>• 𝗦𝘁𝗿𝗲𝗮𝗺𝗹𝗶𝗻𝗲𝗱 𝗲𝗺𝗮𝗶𝗹 𝗰𝗼𝗺𝗺𝘂𝗻𝗶𝗰𝗮𝘁𝗶𝗼𝗻𝘀 by implementing an optimized templating structure using 𝗛𝗮𝗻𝗱𝗹𝗲𝗯𝗮𝗿𝘀, enhancing content delivery efficiency.</p><p>• 𝗠𝗮𝗻𝗮𝗴𝗲𝗱 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿𝗶𝘇𝗲𝗱 𝗱𝗲𝗽𝗹𝗼𝘆𝗺𝗲𝗻𝘁 and complex service interconnections using 𝗗𝗼𝗸𝗸𝘂, significantly improving application resilience and deployment speed.</p>",
+          "roles": []
+        },
+        {
+          "id": "lkt7n3zqm9jns7sz59bzh42a",
+          "hidden": false,
+          "company": "JTradeHelp",
+          "position": "Full-stack Developer",
+          "location": "Iran - Isfahan",
+          "period": "May 2022 - Oct 2023",
+          "website": {
+            "url": "https://jtradehelp.com",
+            "label": ""
+          },
+          "description": "<p>Technologies: Angular, DevOps, Angular Material, RxJS</p>",
+          "roles": []
+        },
+        {
+          "id": "iv4vblgnvszzfcmb5q931hvx",
+          "hidden": false,
+          "company": "HykeUp (Startup)",
+          "position": "Mobile Application Developer",
+          "location": "Canada (Remote)",
+          "period": "May 2022 - Feb 2023",
+          "website": {
+            "url": "https://hykeup.com",
+            "label": ""
+          },
+          "description": "<p>Technologies: Dart,flutter, riverpod, codemagic, DevOps</p>",
+          "roles": []
+        },
+        {
+          "id": "mmjqlxn3j5rmnu7rrb7ngglx",
+          "hidden": false,
+          "company": "Moshavernet Co",
+          "position": "Software Development Team Lead",
+          "location": "Iran-Isfahan",
+          "period": "Aug 2018-Apr 2022",
+          "website": {
+            "url": "https://moshavernet.com",
+            "label": ""
+          },
+          "description": "<p>Technologies: NodeJS, ExpressJS, MongoDB,Postgres, Angular, React, Linux, Docker, Nginx, CI/CD, GitHub Actions, GitLab CI</p>",
+          "roles": []
+        },
+        {
+          "id": "kujccouir5enbbihthp4jv6h",
+          "hidden": false,
+          "company": "Startup Academy",
+          "position": "FullStack Developer",
+          "location": "Iran-Isfahan",
+          "period": "April 2018-Jan 2021",
+          "website": {
+            "url": "https://startupacademy.ir",
+            "label": ""
+          },
+          "description": "<p>Technologies: NodeJs, ExpressJs, Angular, MongoDB, Linux, Docker, Nginx</p>",
+          "roles": []
+        },
+        {
+          "id": "urv49vi4luc75eqdccy9pkqd",
+          "hidden": false,
+          "company": "Kasra Co",
+          "position": "FullStack Developer",
+          "location": "Iran-Isfahan",
+          "period": "May 2017-Apr 2018",
+          "website": {
+            "url": "https://www.kasraco.net",
+            "label": ""
+          },
+          "description": "<p>Technologies: Linux,Angular,Ionic,SQL,Flutter</p>",
+          "roles": []
+        },
+        {
+          "id": "ec211u1uupofb7q9b2ruu2or",
+          "hidden": false,
+          "company": "Tarnegar Co",
+          "position": "Frontend Developer (Angular)",
+          "location": "Iran-Isfahan",
+          "period": "Feb 2016-May 2017",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<p>Technologies: Angular,Ionic</p>",
+          "roles": []
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "projects": {
+      "title": "Projects",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "f2g78oqfwugqz02xp1fufahz",
+          "hidden": true,
+          "name": "Bussiness Model Canvas Builder",
+          "period": "May 2021",
+          "website": {
+            "url": "https://cafebazaar.ir/app/com.moshavernet.bmc",
+            "label": ""
+          },
+          "description": ""
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "dc09rlxz3zuc4egp0gykuurd",
+          "hidden": false,
+          "icon": "",
+          "name": "Javascript/Typescript",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "RxJS",
+            "Lodash",
+            "Zod",
+            "nx"
+          ]
+        },
+        {
+          "id": "pchdq3p1nhjhbdkx14m1xpx9",
+          "hidden": false,
+          "icon": "",
+          "name": "NodeJS",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "ExpressJS",
+            "NestJS",
+            "OpenAPI",
+            "Swagger",
+            "Hono",
+            "Elysia",
+            "Bun",
+            "Supabase",
+            "Deno"
+          ]
+        },
+        {
+          "id": "qe1o8cko5unv8dsn2lh7riuh",
+          "hidden": false,
+          "icon": "",
+          "name": "Rust",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "Cargo",
+            "Rust Wasm",
+            "Shopify functions",
+            "Serde",
+            "itertools",
+            "Tokio",
+            "Tower",
+            "Tonic",
+            "Axum",
+            "Sqlx"
+          ]
+        },
+        {
+          "id": "qerit53ojnlr567gzgqs251c",
+          "hidden": false,
+          "icon": "",
+          "name": "ReactJS",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "Zustand",
+            "Jotai",
+            "Ant Design",
+            "Mui",
+            "Polaris",
+            "React Router",
+            "Zag.js",
+            "XState",
+            "Redux",
+            "Redux Toolkit",
+            "Tanstack Query",
+            "Tanstack Router",
+            "Orval (OpenApi Client Generator)",
+            "NextJS",
+            "Remix"
+          ]
+        },
+        {
+          "id": "v3vf2l6x5jc1nlvaqv1d3st1",
+          "hidden": false,
+          "icon": "",
+          "name": "Angular",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "NgRx",
+            "Angular Material",
+            "Ionic Framework",
+            "Orval"
+          ]
+        },
+        {
+          "id": "lr0gcg3q6wnmqdcoxmbe252g",
+          "hidden": false,
+          "icon": "",
+          "name": "MongoDB",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "Mongoose",
+            "Atlas",
+            "Compass"
+          ]
+        },
+        {
+          "id": "o6z1hw6xoi2x9wcmrdkymvnp",
+          "hidden": false,
+          "icon": "",
+          "name": "Postgres",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "Prisma",
+            "Datagrip",
+            "Azure Data Studio",
+            "Supabase",
+            "DrizzleORM"
+          ]
+        },
+        {
+          "id": "mse7h65nws9uym85p1pt81zq",
+          "hidden": false,
+          "icon": "",
+          "name": "Redis",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "Redis Stack"
+          ]
+        },
+        {
+          "id": "o61qxvu66qgiq1x5mvmyay1y",
+          "hidden": false,
+          "icon": "",
+          "name": "LLM and Agents",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "Vercel AI SDK",
+            "Mastra AI Framework",
+            "Ollama",
+            "Gemini API",
+            "Gemini CLI",
+            "RAG",
+            "AI Workflows",
+            "Multi Agents"
+          ]
+        },
+        {
+          "id": "kp4e3inbyqhidtabctmiur7m",
+          "hidden": false,
+          "icon": "",
+          "name": "Flutter",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "Riverpod",
+            "GetX",
+            "Retrofit",
+            "Freezed",
+            "RxDart"
+          ]
+        },
+        {
+          "id": "bju7f87v4v7n7v3p2fdhg3q8",
+          "hidden": false,
+          "icon": "",
+          "name": "DevOps",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "Linux(Debian based distros)",
+            "Docker",
+            "Docker Compose",
+            "Dokku",
+            "Github Actions",
+            "Gitlab CI",
+            "Nginx",
+            "S3"
+          ]
+        },
+        {
+          "id": "g9fobwnkphjodbveta002l33",
+          "hidden": false,
+          "icon": "",
+          "name": "Software Principles",
+          "proficiency": "",
+          "level": 4,
+          "keywords": [
+            "Solid",
+            "Clean",
+            "DRY",
+            "KISS",
+            "Modularity",
+            "Design Patterns"
+          ]
+        },
+        {
+          "id": "wv4t0pvknaih5owp0hmlyhd4",
+          "hidden": false,
+          "icon": "",
+          "name": "Software Architectures",
+          "proficiency": "",
+          "level": 3,
+          "keywords": [
+            "Monolithic",
+            "Microservices",
+            "Service-Oriented (SOA)",
+            "Serverless",
+            "Event-Driven",
+            "Layered (and Clean)",
+            "MVC",
+            "CQRS",
+            "Orchestration",
+            "DDD (Domain Driven Development)"
+          ]
+        }
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "w94zcirtqw16a5vuknkthhby",
+          "hidden": false,
+          "language": "English",
+          "fluency": "",
+          "level": 3
+        }
+      ]
+    },
+    "interests": {
+      "title": "Interests",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "awards": {
+      "title": "Awards",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "certifications": {
+      "title": "Certifications",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "z1yvcrp4bj5vchu7n5igc73u",
+          "hidden": false,
+          "title": "Theorical and practical JavaScript",
+          "issuer": "Solo learn",
+          "date": "Feb 2020",
+          "website": {
+            "url": "https://www.sololearn.com/Certificate/CT-VBDZN4X2/png",
+            "label": ""
+          },
+          "description": ""
+        },
+        {
+          "id": "kpji9zpw4l8s9pmw0r7cu0ii",
+          "hidden": false,
+          "title": "Certificate of Completion: HTML Course",
+          "issuer": "Solo learn",
+          "date": "Feb 2021",
+          "website": {
+            "url": "https://www.sololearn.com/Certificate/CT-LJOCW9BF/jpg",
+            "label": ""
+          },
+          "description": ""
+        },
+        {
+          "id": "gid1rhvaco10r9p2mfejlm96",
+          "hidden": false,
+          "title": "Certificate of Completion: Angular + NestJS Course",
+          "issuer": "Solo learn",
+          "date": "Feb 2021",
+          "website": {
+            "url": "https://www.sololearn.com/Certificate/CT-WATEN7IN/jpg",
+            "label": ""
+          },
+          "description": ""
+        },
+        {
+          "id": "fwa3a2f6hgcpz4sb1og4foi7",
+          "hidden": false,
+          "title": "Certificate of Completion: CSS Course",
+          "issuer": "Solo learn",
+          "date": "Feb 2022",
+          "website": {
+            "url": "https://www.sololearn.com/Certificate/CT-X7VCQHEA/jpg",
+            "label": ""
+          },
+          "description": ""
+        }
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "volunteer": {
+      "title": "Volunteering",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "references": {
+      "title": "References",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    }
+  },
+  "customSections": [],
+  "metadata": {
+    "template": "rhyhorn",
+    "layout": {
+      "sidebarWidth": 35,
+      "pages": [
+        {
+          "fullWidth": false,
+          "main": [
+            "summary",
+            "profiles",
+            "skills",
+            "experience",
+            "projects",
+            "certifications",
+            "languages"
+          ],
+          "sidebar": [
+            "interests",
+            "awards",
+            "volunteer",
+            "references",
+            "education",
+            "publications"
+          ]
+        }
+      ]
+    },
+    "css": {
+      "enabled": false,
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}"
+    },
+    "page": {
+      "gapX": 4,
+      "gapY": 6,
+      "marginX": 20,
+      "marginY": 20,
+      "format": "a4",
+      "locale": "en-US",
+      "hideIcons": false
+    },
+    "design": {
+      "level": {
+        "icon": "star",
+        "type": "circle"
+      },
+      "colors": {
+        "primary": "rgba(234, 88, 12, 1)",
+        "text": "rgba(0, 0, 0, 1)",
+        "background": "rgba(255, 255, 255, 1)"
+      }
+    },
+    "typography": {
+      "body": {
+        "fontFamily": "Open Sans",
+        "fontWeights": [
+          "400"
+        ],
+        "fontSize": 11.3625,
+        "lineHeight": 1.7
+      },
+      "heading": {
+        "fontFamily": "Open Sans",
+        "fontWeights": [
+          "600"
+        ],
+        "fontSize": 14.3625,
+        "lineHeight": 1.7
+      }
+    },
+    "notes": ""
+  }
+}
